@@ -15,5 +15,11 @@ public class Application {
  
         System.out.println(foo);
         System.out.println("Bar's name: " + bar.getName());
+
+        // Hibernate use connection factory
+        FileExporter fileExporter = FileExporterFactory.getInstance(FileType.PDF);
+        String file = fileExporter.export("Test Content");
+        System.out.println(file);
+
     }
 }
